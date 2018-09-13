@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <!-- <script async src="./opencv.js" type="text/javascript"></script> -->
+  <script async src="./aubio.js" type="text/javascript"></script>
+  <script src="./vendor/rx.js"></script>
+  <script src="./main.js"></script>
+  <!-- <script src="./main.bundle.js"></script> -->
+</head>
+
+<style>
+  button {
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    border: none;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: background-color 250ms ease-in-out, 
+                transform 150ms ease;
+  }
+
+  button:hover,
+  button:focus {
+    background-color: #0053ba;
+  }
+
+  button:focus {
+    outline: 4px solid #fff;
+    outline-offset: -4px;
+  }
+
+  button:disabled {
+    cursor: none;
+    background-color:lightgray;
+    cursor: not-allowed;
+  }
+
+  #visualizeButton {
+    visibility: hidden;
+  }
+
+  .output {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+</style>
+
+<body>
+  <h2 id="workerStatus"></h2>
+  <h3>Microphone Status: <span id="microphoneStatus"></span></h3>
+  <p id="error"></p>
+  <div class="threshold">
+    <h4>Threshold: <span id="threshold"></span></h4>
+    <input />
+    <button disabled>Update threshold</button>
+  </div>
+  <h4>Result: <span id="result"></span></h4>
+  <button id="mlButton" type="button">Load Model</button>
+  <div class="output">
+    <button id="visualizeButton" type="button" status="init" disabled>Visualize</button>
+    <canvas id="output" width=480 height=320 style="max-width: 100%"></canvas>
+  </div>
+  <!-- <button id="play">play</button>
+  <input id="file" type="file" accept="audio/*" /> -->
+</body>
+
+</html>

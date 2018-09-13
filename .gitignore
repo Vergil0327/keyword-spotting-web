@@ -1,0 +1,12 @@
+# folders
+node_modules
+dist
+aubio
+
+# script from build script
+relajet.js
+relajetEn.js
+kkbox.js
+main.bundle.js
+
+RelaJet-KWS
